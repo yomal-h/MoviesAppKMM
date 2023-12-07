@@ -9,7 +9,7 @@ import kotlinx.serialization.json.Json
 
 
 private const val BASE_URL = "https://api.themoviedb.org/"
-private const val API_KEY = "YOUR_API_KEY"
+private const val API_KEY = "4fc474efeffbb9dc9c49b82168ed4709"
 
 internal abstract class KtorApi {
     val client = HttpClient {
@@ -20,6 +20,7 @@ internal abstract class KtorApi {
             })
         }
     }
+
 
     fun HttpRequestBuilder.pathUrl(path: String){
         url {

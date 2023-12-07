@@ -70,9 +70,7 @@ fun MovieApp() {
                         homeViewModel.loadMovies(forceReload = it)
                     },
                     navigateToDetail = {
-                        navController.navigate(
-                            "${Detail.route}/${it.id}"
-                        )
+
                     }
                 )
             }
