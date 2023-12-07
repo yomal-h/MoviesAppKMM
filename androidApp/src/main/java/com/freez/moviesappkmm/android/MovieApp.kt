@@ -18,6 +18,8 @@ import com.freez.moviesappkmm.android.common.Detail
 import com.freez.moviesappkmm.android.common.Home
 import com.freez.moviesappkmm.android.common.MovieAppBar
 import com.freez.moviesappkmm.android.common.movieDestinations
+import com.freez.moviesappkmm.android.detail.DetailScreen
+import com.freez.moviesappkmm.android.detail.DetailViewModel
 import com.freez.moviesappkmm.android.home.HomeScreen
 import com.freez.moviesappkmm.android.home.HomeViewModel
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
@@ -70,19 +72,21 @@ fun MovieApp() {
                         homeViewModel.loadMovies(forceReload = it)
                     },
                     navigateToDetail = {
-
+                        navController.navigate(
+                            "${Detail.route}/${it.id}"
+                        )
                     }
                 )
             }
 
-           /* composable(Detail.routeWithArgs, arguments = Detail.arguments){
+            composable(Detail.routeWithArgs, arguments = Detail.arguments){
                 val movieId = it.arguments?.getInt("movieId") ?: 0
                 val detailViewModel: DetailViewModel = koinViewModel(
                     parameters = { parametersOf(movieId) }
                 )
 
                 DetailScreen(uiState = detailViewModel.uiState)
-            }*/
+            }
         }
 
     }
