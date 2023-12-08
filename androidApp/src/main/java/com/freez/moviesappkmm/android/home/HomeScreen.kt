@@ -47,7 +47,7 @@ fun HomeScreen(
         ){
             itemsIndexed(
                 uiState.movies,
-                key = {_, movie -> movie.id}
+                key = { index, movie -> "${index}_${movie.id}" }
             ){index, movie ->
                 MovieListItem(movie = movie, onMovieClick = { navigateToDetail(movie) })
 

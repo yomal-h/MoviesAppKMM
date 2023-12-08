@@ -15,6 +15,7 @@ internal abstract class KtorApi {
     val client = HttpClient {
         install(ContentNegotiation){
             json(Json {
+
                 ignoreUnknownKeys = true
                 useAlternativeNames = false
             })
