@@ -9,7 +9,8 @@ android {
     defaultConfig {
         applicationId = "com.freez.moviesappkmm.android"
         minSdk = 24
-        targetSdk = 32
+        //noinspection EditedTargetSdkVersion
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
     }
@@ -17,7 +18,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.3.0"
+        kotlinCompilerExtensionVersion = "1.4.0"
     }
     packagingOptions {
         resources {
